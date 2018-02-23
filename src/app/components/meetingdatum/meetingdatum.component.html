@@ -1,0 +1,18 @@
+<form  (ngSubmit)="onSubmit(f)" #f="ngForm"
+      class="ui form">
+  <div class="row">
+    <div
+      *ngFor="let datum of datums">
+      <input type="checkbox" value="{{datum.MeetingDatumId}}" name="{{datum.MeetingDatumId}}" [(ngModel)] = "datum.checked" id="{{datum.MeetingDatumId}}">
+      <label for="{{datum.MeetingDatumId}}">
+        Van {{toDateString(datum.DatumStart)}} tot {{toDateString(datum.DatumEind)}} - {{datum.AantalStemmen}} stemmen
+      </label>
+    </div>
+    <div class="row" class="backoff">
+      <label for="email" class="alsobackoff">Email: </label>
+      <input name="email" type="email" id="email" ngModel/>
+    </div>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>
+
