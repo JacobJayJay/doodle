@@ -16,11 +16,11 @@ import {ISubscription} from "rxjs/Subscription";
 export class MeetingComponent implements OnInit {
   private odata:ODataService<MeetingModel>;
 
-  private meeting:  MeetingModel;
-  private room : MeetingroomModel;
-  private datums : MeetingdatumModel[];
-  private id: number;
-  public sub : ISubscription;
+  meeting:  MeetingModel;
+  room : MeetingroomModel;
+  datums : MeetingdatumModel[];
+  id: number;
+  sub : ISubscription;
 
   constructor(private meetingService:MeetingService,private route:ActivatedRoute, private meetingroomService: MeetingroomService){
 
@@ -41,7 +41,7 @@ export class MeetingComponent implements OnInit {
     setInterval(() =>{this.refreshMeeting()},1000);
   }
 
-  toDateString(datum: string){
+  toDateString(datum: Date){
     let date = new Date(datum);
     var uur = "" +date.getHours();
     var minuten ="" + date.getMinutes();

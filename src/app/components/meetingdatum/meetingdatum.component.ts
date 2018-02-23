@@ -17,11 +17,11 @@ import {MeetinguserService} from "../../services/meetinguser.service";
   styleUrls: ['./meetingdatum.component.css']
 })
 export class MeetingdatumComponent implements OnInit {
-  private datums : MeetingdatumModel[];
-  private id : Number;
-  private voorkeurDatum : MeetingdatumModel;
-  private subber: ISubscription;
-  private users : MeetinguserModel[];
+  datums : MeetingdatumModel[];
+  id : Number;
+  voorkeurDatum : MeetingdatumModel;
+  subber: ISubscription;
+  users : MeetinguserModel[];
 
   constructor(private meetingdatumService: MeetingdatumService, private route: ActivatedRoute, private meetingService: MeetingService, private userService: MeetinguserService) { }
 
@@ -77,7 +77,7 @@ export class MeetingdatumComponent implements OnInit {
 
   }
 
-  toDateString(datum: string){
+  toDateString(datum: Date){
     let date = new Date(datum);
     var uur = "" +date.getHours();
     var minuten ="" + date.getMinutes();
